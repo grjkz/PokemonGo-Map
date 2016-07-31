@@ -1156,6 +1156,11 @@ $(function() {
     // recall saved lists
     $selectExclude.val(Store.get('remember_select_exclude')).trigger("change");
     $selectNotify.val(Store.get('remember_select_notify')).trigger("change");
+
+    // set the height and overflow to prevent selector from going off the page
+    $select2RenderedLists = $('.select2-selection__rendered');
+    $select2RenderedLists.css('max-height', '165px').css('overflow-y', 'scroll');
+    console.log('setting css on hide and notify list');
   });
 
   // run interval timers to regularly update map and timediffs
